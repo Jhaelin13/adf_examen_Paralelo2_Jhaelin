@@ -1,5 +1,5 @@
 {
-	"name": "df_bronze_Clientes",
+	"name": "df_bronze_Detalles_Ventas",
 	"properties": {
 		"folder": {
 			"name": "Bronze"
@@ -9,7 +9,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_csv_clientes",
+						"referenceName": "ds_csv_detalle_ventas",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -18,7 +18,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_bronze_clientes",
+						"referenceName": "ds_sql_bronze_detalle_ventas",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -27,12 +27,14 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          cst_id as string,",
-				"          cst_key as string,",
-				"          cst_firstname as string,",
-				"          cst_lastname as string,",
-				"          cst_marital_status as string,",
-				"          cst_gndr as string",
+				"          sls_ord_num as string,",
+				"          sls_prd_key as string,",
+				"          sls_cust_id as string,",
+				"          sls_order_dt as string,",
+				"          sls_ship_dt as string,",
+				"          sls_sales as string,",
+				"          sls_quantity as string,",
+				"          sls_price as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -40,12 +42,14 @@
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
-				"          cst_id as integer,",
-				"          cst_key as string,",
-				"          cst_firstname as string,",
-				"          cst_lastname as string,",
-				"          cst_marital_status as string,",
-				"          cst_gndr as string",
+				"          sls_ord_num as integer,",
+				"          sls_prd_key as string,",
+				"          sls_cust_id as integer,",
+				"          sls_order_dt as date,",
+				"          sls_ship_dt as date,",
+				"          sls_sales as decimal(10,2),",
+				"          sls_quantity as integer,",
+				"          sls_price as decimal(10,2)",
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
