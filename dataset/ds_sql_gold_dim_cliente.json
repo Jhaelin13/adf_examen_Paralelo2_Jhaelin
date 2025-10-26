@@ -1,0 +1,46 @@
+{
+	"name": "ds_sql_gold_dim_cliente",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ClienteKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cst_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cst_key",
+				"type": "varchar"
+			},
+			{
+				"name": "NombreCompleto",
+				"type": "varchar"
+			},
+			{
+				"name": "EstadoCivil",
+				"type": "char"
+			},
+			{
+				"name": "Genero",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "gold",
+			"table": "DimCliente"
+		}
+	}
+}

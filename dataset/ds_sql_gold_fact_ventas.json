@@ -1,0 +1,56 @@
+{
+	"name": "ds_sql_gold_fact_ventas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VentaID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ClienteKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProductoKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FechaOrden",
+				"type": "date"
+			},
+			{
+				"name": "Cantidad",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MontoVenta",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "CostoProducto",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "gold",
+			"table": "FactVentas"
+		}
+	}
+}

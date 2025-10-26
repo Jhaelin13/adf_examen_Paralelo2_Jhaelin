@@ -1,0 +1,42 @@
+{
+	"name": "ds_sql_gold_dim_producto",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProductoKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "prd_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "prd_key",
+				"type": "varchar"
+			},
+			{
+				"name": "NombreProducto",
+				"type": "varchar"
+			},
+			{
+				"name": "LineaProducto",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "gold",
+			"table": "DimProducto"
+		}
+	}
+}

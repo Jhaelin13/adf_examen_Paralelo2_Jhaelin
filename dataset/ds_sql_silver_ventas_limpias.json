@@ -1,0 +1,72 @@
+{
+	"name": "ds_sql_silver_ventas_limpias",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Silver"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sls_ord_num",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sls_order_dt",
+				"type": "date"
+			},
+			{
+				"name": "cst_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cst_firstname",
+				"type": "varchar"
+			},
+			{
+				"name": "cst_lastname",
+				"type": "varchar"
+			},
+			{
+				"name": "prd_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "prd_key",
+				"type": "varchar"
+			},
+			{
+				"name": "prd_nm",
+				"type": "varchar"
+			},
+			{
+				"name": "prd_cost",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "sls_quantity",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sls_sales",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "silver",
+			"table": "VentasLimpias"
+		}
+	}
+}
